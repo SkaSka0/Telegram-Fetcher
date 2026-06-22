@@ -46,7 +46,7 @@ from IPython.display import clear_output
 # ===== CONSTANTS =====
 REPO_URL = "https://github.com/lIlSkaSkaSkalIl/Telegram-Fetcher"
 REPO_DIR = "/content/Telegram-Fetcher"
-CONFIG_DIR = f"{REPO_DIR}/colab-fetcher/config"
+CONFIG_DIR = f"{REPO_DIR}/colab_fetcher/config"
 
 APPNAME = "TelegramFetcher"
 
@@ -118,10 +118,10 @@ def save_credentials():
         raise IOError(f"Gagal menyimpan credentials: {e}")
 
 def run_bot():
-    """Jalankan bot dari package colab-fetcher."""
+    """Jalankan bot dari package colab_fetcher."""
     log("Memulai bot...", level="INFO")
     try:
-        !cd /content/Telegram-Fetcher/ && python3 -m colab-fetcher
+        !cd /content/Telegram-Fetcher/ && python3 -m colab_fetcher
     except subprocess.CalledProcessError as e:
         raise RuntimeError(f"Bot crash! Error: {e}")
 
