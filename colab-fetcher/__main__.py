@@ -13,10 +13,10 @@ from pyrogram.enums import ParseMode
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pathlib import Path
 
-from colab_fetcher import CONFIG_PATH
-from colab_fetcher import load_credentials
-from colab_fetcher.utils.client import app
-from colab_fetcher.utils.logging import logger
+from colab-fetcher import CONFIG_PATH
+from colab-fetcher import load_credentials
+from colab-fetcher.utils.client import app
+from colab-fetcher.utils.logging import logger
 
 # ==========================
 # 📌 GLOBAL VARIABLE
