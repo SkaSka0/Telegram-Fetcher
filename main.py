@@ -121,7 +121,7 @@ def run_bot():
     """Jalankan bot dari package colab-fetcher."""
     log("Memulai bot...", level="INFO")
     try:
-        !cd /content/Telegram_Fetcher/ && python3 -m colab_fetcher
+        !cd /content/Telegram-Fetcher/ && python3 -m colab-fetcher
     except subprocess.CalledProcessError as e:
         raise RuntimeError(f"Bot crash! Error: {e}")
 
