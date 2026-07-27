@@ -74,7 +74,7 @@ Status: `Draft` — silakan diskusikan/update lewat Issue atau PR.
   ```
 - [ ] Enkapsulasi global dict (`active_downloads`, `completed_downloads`, `batch_buffer`, `batch_tasks`) ke dalam class/state manager, alih-alih shared mutable state yang tersebar di banyak fungsi.
 - [ ] `CONFIG_PATH` saat ini hardcoded absolute path (`/content/...`) sehingga tidak portable di luar Colab — pertimbangkan env var atau path relatif terhadap package.
-- [ ] Standarisasi bahasa: tentukan konvensi (misal UI/teks ke user Bahasa Indonesia, kode & komentar Bahasa Inggris) dan dokumentasikan sebagai keputusan sadar.
+- [ ] Migrasi user-facing string (pesan bot, error messages, progress text, dll di `colab_fetcher/__main__.py`) dari Bahasa Indonesia ke Bahasa Inggris. Dikerjakan sebagai item terpisah dari migrasi kode internal (nama fungsi/variabel/komentar), agar perubahan wording bisa direview sendiri. Daftar fungsi yang perlu disentuh: `get_start_message`, `get_tgupload_message`, help text di `help_handler`, `get_progress_text`, `download_summary_message`, `queue_command` text, `cancel_all_command` text, dan semua entri di `send_error`'s `error_messages` dict.
 - [ ] Terapkan prinsip satu tanggung jawab per fungsi (Single Responsibility). Beberapa fungsi seperti `handle_file_upload` dan `download_with_progress` saat ini melakukan banyak hal sekaligus (queue management, state tracking, batching, progress reporting, error handling) — pecah menjadi fungsi-fungsi yang lebih kecil dan fokus saat refactor modul terkait.
 
 ---
