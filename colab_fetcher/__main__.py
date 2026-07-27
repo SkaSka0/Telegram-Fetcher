@@ -158,7 +158,7 @@ async def handle_file_upload(client, message: Message):
 @app.on_message(filters.command("queue"))
 async def queue_command(client, message: Message):
     queue_text = "📊 <b>Status Antrian</b>\n\n"
-    
+
     # Active download
     if active_downloads:
         queue_text += "📥 <b>Active Download:</b>\n"
@@ -172,14 +172,14 @@ async def queue_command(client, message: Message):
     # Queue size
     size = download_queue.qsize()
     queue_text += f"\n📂 <b>Total file dalam antrian:</b> {size}\n"
-    short_name = smart_truncate_filename(filename)
-    
+
     # List file dalam queue
     if size > 0:
         queue_text += "\n📝 <b>Daftar file:</b>\n"
         for idx, item in enumerate(list(download_queue._queue), start=1):
             _, msg, file_path, _ = item
             filename = os.path.basename(file_path)
+            short_name = smart_truncate_filename(filename)
             queue_text += f"{idx}. {short_name}\n"
 
         # Hitung total size
