@@ -12,7 +12,7 @@ Status: `Draft` — silakan diskusikan/update lewat Issue atau PR.
 
 > Bot saat ini **tidak bisa berjalan sama sekali**. Fase ini harus selesai lebih dulu sebelum fase lain dikerjakan.
 
-- [ ] **Fix import `colab-fetcher` → `colab_fetcher`**
+- [x] **Fix import `colab-fetcher` → `colab_fetcher`**
   - Lokasi: `colab_fetcher/__main__.py`
   - Masalah: `colab-fetcher` (dengan tanda hubung) bukan identifier Python yang valid, menyebabkan `SyntaxError` saat module di-load.
   - Baris terkait:
@@ -23,7 +23,7 @@ Status: `Draft` — silakan diskusikan/update lewat Issue atau PR.
     from colab-fetcher.utils.logging import logger
     ```
 
-- [ ] **Fix `NameError`/logic error di `queue_command`**
+- [x] **Fix `NameError`/logic error di `queue_command`**
   - Lokasi: `colab_fetcher/__main__.py`
   - Masalah: variabel `filename` dipakai (`smart_truncate_filename(filename)`) sebelum pernah didefinisikan jika `active_downloads` kosong, dan dipanggil di luar loop `download_queue._queue` sehingga daftar file di `/queue` menampilkan nama yang sama (stale) untuk semua item.
 
